@@ -1,0 +1,33 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123",
+      "email": "admin@vulnerableshop.com",
+      "is_admin": true
+    },
+    {
+      "id": 2,
+      "username": "123",
+      "password": "123",
+      "email": "user123@test.com",
+      "is_admin": false
+    },
+    {
+      "id": 3,
+      "username": "user1",
+      "password": "123",
+      "email": "user1@test.com",
+      "is_admin": false
+    },
+    {
+      "id": 4,
+      "username": "user2",
+      "password": "123",
+      "email": "user2@test.com",
+      "is_admin": false
+    }
+  ],
+  "message": "This API endpoint exposes all user data - No authentication required"
+}
