@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Vulnerable Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🛍️ Vulnerable Shop Dashboard</h1>
+        <div id="userInfo" class="card">
+            <span id="usernameDisplay">Loading...</span>
+            <button onclick="logout()" class="btn btn-warning" style="float: right;">Logout</button>
+        </div>
+
+        <div class="card admin-section">
+            <h2>🔓 Vulnerability Testing Panel</h2>
+            
+            <h3>IDOR Test (Insecure Direct Object Reference):</h3>
+            <div class="idor-test">
+                <button onclick="viewUserProfile(1)" class="btn">View User 1 Profile</button>
+                <button onclick="viewUserProfile(2)" class="btn">View User 2 Profile</button>
+                <button onclick="viewUserProfile(3)" class="btn">View User 3 Profile</button>
+                <div id="userProfileResult" class="user-profile"></div>
+            </div>
+
+            <h3>Data Exposure:</h3>
+            <button onclick="fetchAllUsers()" class="btn btn-secondary">Fetch All Users Data</button>
+            <div id="allUsersData"></div>
+
+            <h3>XSS Test:</h3>
+            <input type="text" id="xssInput" placeholder="Try: <script>alert('XSS')</script>" class="form-group">
+            <button onclick="testXSS()" class="btn btn-warning">Test XSS Vulnerability</button>
+            <div id="xssOutput"></div>
+        </div>
+
+        <h2>🛒 Products</h2>
+        <div class="products-grid" id="productsGrid">
+            <!-- Products loaded by JavaScript -->
+        </div>
+
+        <div class="navigation">
+            <a href="index.html" class="btn">🏠 Home</a>
+            <a href="login.html" class="btn">🔐 Login</a>
+            <a href="admin.html" class="btn">🔧 Admin Panel</a>
+            <a href="api/users.json" class="btn">🔗 Users API</a>
+        </div>
+    </div>
+
+    <script src="js/database.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
